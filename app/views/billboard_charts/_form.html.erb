@@ -1,0 +1,7 @@
+<h1><%= @billboard_chart.id ? 'Edit Billboard' : 'Create Billboard' %></h1>
+<hr>
+<%= form_for @billboard_chart do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <%= f.submit %>
+<% end %>

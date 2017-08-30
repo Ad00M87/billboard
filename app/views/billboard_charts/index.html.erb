@@ -1,0 +1,9 @@
+<h1>Click a Billboard to view Songs</h1>
+<%= link_to 'Create a new Billboard', new_billboard_chart_path %>
+<ul>
+  <% @billboard_chart.each do |billboard_chart| %>
+    <li>
+      <%= link_to billboard_chart.name, billboard_chart_path(billboard_chart) %>
+    </li>
+  <% end %>
+</ul>
