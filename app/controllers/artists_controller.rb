@@ -22,7 +22,7 @@ class ArtistsController < ApplicationController
     if @artist.save
       redirect_to artist_path(@artist)
     else
-      render partial: "form"
+      render partial: 'form'
     end
   end
 

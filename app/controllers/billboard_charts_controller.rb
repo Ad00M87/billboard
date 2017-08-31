@@ -22,7 +22,7 @@ class BillboardChartsController < ApplicationController
     if @billboard_chart.save
       redirect_to billboard_chart_path(@billboard_chart)
     else
-      render partial: "form"
+      render partial: 'form'
     end
   end
 
