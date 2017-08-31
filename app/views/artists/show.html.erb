@@ -1,0 +1,17 @@
+<h1><%= @artist.name %></h1>
+<hr>
+<h3>Comes from: <%= @artist.from %></h3>
+<h3>Plays <%= @artist.music_genre %> type music.</h3>
+<h3>Age: <%= @artist.age %> years old.</h3>
+<br>
+<h3>SONGS:</h3>
+<% @artist.songs.each do |song| %>
+  <ul>
+    <%= link_to song.name, artist_song_path(@artist, song) %>
+  </ul>
+<% end %>
+<hr>
+<%= link_to 'Add Song', new_artist_song_path(@artist) %>
+<%= link_to 'Edit', edit_artist_path(@artist) %>
+<%= link_to 'Delete', artist_path(@artist), method: :delete %>
+<%= link_to 'Back to Artists', artists_path %>

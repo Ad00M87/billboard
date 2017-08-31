@@ -28,7 +28,7 @@ class BillboardChartsController < ApplicationController
 
   def update
     if @billboard_chart.update(billboard_chart_params)
-      redirect to billboard_chart_path(@billboard_chart)
+      redirect_to billboard_chart_path(@billboard_chart)
     else
       render partial: 'form'
     end
