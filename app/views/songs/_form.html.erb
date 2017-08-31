@@ -7,7 +7,7 @@
   <%= f.label :genre %>
   <%= f.text_field :genre, required: true %>
   <br>
-  
+  <%= f.collection_select :billboard_chart_id, BillboardChart.order(:name),:id,:name, include_blank: true %>
   <br>
   <%= f.submit %>
 <% end %>

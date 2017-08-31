@@ -1,4 +1,11 @@
 <h1><%= @billboard_chart.name %></h1>
-<%= link_to 'Edit', edit_billboard_chart_path(@billboard_chart) %>
-<%= link_to 'Delete', billboard_chart_path(@billboard_chart), method: :delete %>
+<% @billboard_chart.songs.each do |song| %>
+  <ol>
+    <li><%= link_to song.name, artist_song_path(song.artist_id, song) %> -
+      <%= link_to song.artist.name, artist_path(song.artist_id) %></li>
+  </ol>
+<% end %>
+
+<%= link_to 'Edit Billboard', edit_billboard_chart_path(@billboard_chart) %>
+<%= link_to 'Delete Billboard', billboard_chart_path(@billboard_chart), method: :delete %>
 <%= link_to 'Back to Billboards', billboard_charts_path %>

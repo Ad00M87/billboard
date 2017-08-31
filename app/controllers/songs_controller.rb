@@ -29,7 +29,7 @@ class SongsController < ApplicationController
 
   def update
     if @song.update(song_params)
-      redirect_to artist_songs_path(@artist, @song)
+      redirect_to artist_song_path(@artist, @song)
     else
       render partial: 'form'
     end
