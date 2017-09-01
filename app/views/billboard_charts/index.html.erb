@@ -1,11 +1,29 @@
-<h1>Click a Billboard to view Songs</h1>
-<%= link_to 'Create a new Billboard', new_billboard_chart_path %>
-<ul>
+<h3 class="center-align">Click a Billboard to view Songs</h3>
+<%= link_to 'Create a new Billboard', new_billboard_chart_path, class: 'waves-effect waves-light btn' %>
+<!-- <ul>
   <% @billboard_chart.each do |billboard_chart| %>
     <li>
       <%= link_to billboard_chart.name, billboard_chart_path(billboard_chart) %>
     </li>
   <% end %>
 </ul>
-<hr>
-<%= link_to 'Home', root_path %>
+<hr> -->
+
+<ul class="collapsible z-depth-2" data-collapsible="accordion">
+  <% @billboard_chart.each do |billboard_chart| %>
+    <li>
+      <div class="collapsible-header hoverable"><%= billboard_chart.name %></div>
+      <div class="collapsible-body"><span>
+        <ol>
+          <% billboard_chart.songs.each do |song| %>
+          <li><%= song.name %></li>
+          <% end %>
+        </ol>
+        <br>
+        <%= link_to 'Go to Billboard', billboard_chart_path(billboard_chart), class: 'waves-effect waves-light btn' %>
+      </span></div>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Home', root_path, class: 'waves-effect waves-light btn'%>

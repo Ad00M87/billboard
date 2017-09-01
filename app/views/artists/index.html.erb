@@ -1,10 +1,22 @@
-<h1>Click on an Artist to view their profile</h1>
-<%= link_to 'Create a new Artist', new_artist_path %>
-<ul>
+
+<h3 class="center-align">Click on an Artist to view their songs</h3>
+<%= link_to 'Create a new Artist', new_artist_path, class: 'waves-effect waves-light btn' %>
+
+<ul class="collapsible z-depth-2" data-collapsible="accordion">
   <% @artist.each do |artist| %>
     <li>
-      <%= link_to artist.name, artist_path(artist) %>
+      <div class="collapsible-header hoverable"><%= artist.name %></div>
+      <div class="collapsible-body"><span>
+        <ul>
+          <% artist.songs.each do |song| %>
+          <li><%= song.name %></li>
+          <% end %>
+        </ul>
+        <br>
+        <%= link_to 'Go to Artist', artist_path(artist), class: 'waves-effect waves-light btn' %>
+      </span></div>
     </li>
   <% end %>
 </ul>
-<%= link_to 'Back to Home', root_path %>
+
+<%= link_to 'Home', root_path, class: 'waves-effect waves-light btn'%>

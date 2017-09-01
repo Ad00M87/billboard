@@ -1,4 +1,64 @@
-<h1>Welcome to the Billboard song list!</h1>
-<h2>What would you like to do?</h2>
-<%= link_to 'View Billboards', billboard_charts_path %>
-<%= link_to 'View Artists', artists_path %>
+<div class="center-align">
+  <h3>Welcome!</h3>
+  <h4>What would you like to do?</h4>
+</div>
+
+<div class="row center-align">
+  <a href="#" data-activates="slide-out"
+  class="button-collapse col s12 waves-effect waves-purple
+  btn-large white-text #00695c teal darken-3"><i class="material-icons">View Billboards</i></a>
+  <br>
+</div>
+<div class="row center-align">
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="col s12 waves-effect waves-purple
+      btn-large white-text #00695c teal darken-3 collapsible-header valign-wrapper center-align">View Artists</div>
+      <div class="collapsible-body">
+        <div class="row center-align">
+
+        </div>
+        <img class="col s6" src="http://www2.pictures.zimbio.com/gi/Bryan+Sammis+MTV+Taco+Bell+Present+VMA+Concert+2rl8bkS5Xb3l.jpg" width="200px" height="200px">
+        <ul class="col s6">
+          <% Artist.all.each do |artist| %>
+            <li>
+              <%= link_to artist.name, artist_path(artist) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <img class="responsive-img" src="https://static.pexels.com/photos/63703/pexels-photo-63703.jpeg">
+      </div>
+      <h5 class="yellow-text">BILLBOARDS</h5>
+      <h5 class="yellow-text">PLEASE</h5>
+      <h5 class="yellow-text">SELECT</h5>
+    </div></li>
+    <% BillboardChart.all.each do |billboard_chart| %>
+      <li>
+        <%= link_to billboard_chart.name, billboard_chart_path(billboard_chart) %>
+      </li>
+    <% end %>
+</ul>
+
+<!-- <ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <img class="responsive-img" src="http://www2.pictures.zimbio.com/gi/Bryan+Sammis+MTV+Taco+Bell+Present+VMA+Concert+2rl8bkS5Xb3l.jpg">
+      </div>
+      <h5 class="yellow-text">ARTISTS</h5>
+      <h5 class="yellow-text">PLEASE</h5>
+      <h5 class="yellow-text">SELECT</h5>
+    </div></li>
+    <% Artist.all.each do |artist| %>
+      <li>
+        <%= link_to artist.name, artist_path(artist) %>
+      </li>
+    <% end %>
+</ul> -->

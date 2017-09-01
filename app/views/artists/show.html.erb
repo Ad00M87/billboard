@@ -1,17 +1,27 @@
-<h1><%= @artist.name %></h1>
+<h3><%= @artist.name %></h3>
 <hr>
-<h3>Comes from: <%= @artist.from %></h3>
-<h3>Plays <%= @artist.music_genre %> type music.</h3>
-<h3>Age: <%= @artist.age %> years old.</h3>
+
+
+<div class="row">
+  <div class="col s4">
+    <h5>Comes from: <%= @artist.from %></h5>
+  </div>
+  <div class="col s4">
+    <h5>Plays <%= @artist.music_genre %> type music.</h5>
+  </div>
+  <div class="col s4">
+    <h5>Age: <%= @artist.age %> years old.</h5>
+  </div>
+</div>
 <br>
-<h3>SONGS:</h3>
+<h4>SONGS:</h4>
 <% @artist.songs.each do |song| %>
   <ul>
-    <%= link_to song.name, artist_song_path(@artist, song) %>
+    <%= link_to song.name, artist_song_path(@artist, song), class: 'waves-effect waves-light btn blue' %>
   </ul>
 <% end %>
 <hr>
-<%= link_to 'Add Song', new_artist_song_path(@artist) %>
-<%= link_to 'Edit Artist', edit_artist_path(@artist) %>
-<%= link_to 'Delete Artist', artist_path(@artist), method: :delete %>
-<%= link_to 'Back to Artists', artists_path %>
+<%= link_to 'Add Song', new_artist_song_path(@artist), class: 'waves-effect waves-light btn' %>
+<%= link_to 'Edit Artist', edit_artist_path(@artist), class: 'waves-effect waves-light btn' %>
+<%= link_to 'Delete Artist', artist_path(@artist), method: :delete, class: 'waves-effect waves-light btn' %>
+<%= link_to 'Back to Artists', artists_path, class: 'waves-effect waves-light btn' %>

@@ -1,9 +1,15 @@
-<h1><%= @song.name %></h1>
+<h3><%= @song.name %></h3>
 <hr>
-<h3>Artist: <%= @artist.name %></h3>
-<h3>Genre: <%= @song.genre %></h3>
-<h3>Billboard: <%= @song.billboard_chart.name %></h3>
+<h5>Artist: <%= @artist.name %></h5>
+<h5>Genre: <%= @song.genre %></h5>
+<h5>Billboard:
+  <% if @song.billboard_chart_id == nil %>
+  <%= 'Not on a billboard' %>
+  <% else %>
+  <%= @song.billboard_chart.name %>
+  <% end %>
+</h5>
 <hr>
-<%= link_to 'Edit Song', edit_artist_song_path(@artist, @song) %>
-<%= link_to 'Delete Song', artist_song_path(@artist, @song), method: :delete %>
-<%= link_to 'Back to Artist', artist_path(@artist) %>
+<%= link_to 'Edit Song', edit_artist_song_path(@artist, @song), class: 'waves-effect waves-light btn' %>
+<%= link_to 'Delete Song', artist_song_path(@artist, @song), method: :delete, class: 'waves-effect waves-light btn' %>
+<%= link_to 'Back to Artist', artist_path(@artist), class: 'waves-effect waves-light btn' %>

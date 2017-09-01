@@ -1,13 +1,30 @@
+
+<%= render 'layouts/application' %>
+
+<div class="container">
 <h1><%= @song.id ? 'Edit Song' : 'Create Song' %></h1>
-<hr>
-<%= form_for [@artist, @song] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, required: true, autofocus: true %>
-  <br>
-  <%= f.label :genre %>
-  <%= f.text_field :genre, required: true %>
-  <br>
-  <%= f.collection_select :billboard_chart_id, BillboardChart.order(:name),:id,:name, include_blank: true %>
-  <br>
-  <%= f.submit %>
-<% end %>
+
+  <%= form_for [@artist, @song] do |f| %>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.label :name %>
+          <%= f.text_field :name, required: true, autofocus: true %>
+        </div>
+        <div class="input-field col s6">
+          <%= f.label :genre %>
+          <%= f.text_field :genre, required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :billboard_chart %>
+          <%= f.collection_select :billboard_chart_id, BillboardChart.order(:name),:id,:name, include_blank: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.submit %>
+        </div>
+      </div>
+  <% end %>
+</div>
