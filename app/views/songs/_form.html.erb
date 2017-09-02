@@ -16,13 +16,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6">
           <%= f.label :billboard_chart %>
           <%= f.collection_select :billboard_chart_id, BillboardChart.order(:name),:id,:name, include_blank: true %>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s12 waves-effect waves-light btn #00695c teal darken-3">
           <%= f.submit %>
         </div>
       </div>

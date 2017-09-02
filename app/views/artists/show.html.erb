@@ -17,11 +17,11 @@
 <h4>SONGS:</h4>
 <% @artist.songs.each do |song| %>
   <ul>
-    <%= link_to song.name, artist_song_path(@artist, song), class: 'waves-effect waves-light btn blue' %>
+    <%= link_to song.name, artist_song_path(@artist, song), class: 'waves-effect waves-light btn blue darken-3' %>
   </ul>
 <% end %>
 <hr>
-<%= link_to 'Add Song', new_artist_song_path(@artist), class: 'waves-effect waves-light btn' %>
-<%= link_to 'Edit Artist', edit_artist_path(@artist), class: 'waves-effect waves-light btn' %>
-<%= link_to 'Delete Artist', artist_path(@artist), method: :delete, class: 'waves-effect waves-light btn' %>
-<%= link_to 'Back to Artists', artists_path, class: 'waves-effect waves-light btn' %>
+<%= link_to 'Add Song', new_artist_song_path(@artist), class: 'waves-effect waves-light btn #00695c teal darken-3' %>
+<%= link_to 'Edit Artist', edit_artist_path(@artist), class: 'waves-effect waves-light btn #00695c teal darken-3' %>
+<%= link_to 'Delete Artist', artist_path(@artist), method: :delete, class: 'waves-effect waves-light btn #00695c teal darken-3' %>
+<%= link_to 'Back to Artists', artists_path, class: 'waves-effect waves-light btn #00695c teal darken-3' %>

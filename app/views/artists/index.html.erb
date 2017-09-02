@@ -1,6 +1,6 @@
 
 <h3 class="center-align">Click on an Artist to view their songs</h3>
-<%= link_to 'Create a new Artist', new_artist_path, class: 'waves-effect waves-light btn' %>
+<%= link_to 'Create a new Artist', new_artist_path, class: 'waves-effect waves-light btn #00695c teal darken-3' %>
 
 <ul class="collapsible z-depth-2" data-collapsible="accordion">
   <% @artist.each do |artist| %>
@@ -13,10 +13,10 @@
           <% end %>
         </ul>
         <br>
-        <%= link_to 'Go to Artist', artist_path(artist), class: 'waves-effect waves-light btn' %>
+        <%= link_to 'Go to Artist', artist_path(artist), class: 'waves-effect waves-light btn #00695c teal darken-3' %>
       </span></div>
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'Home', root_path, class: 'waves-effect waves-light btn'%>
+<%= link_to 'Home', root_path, class: 'waves-effect waves-light btn #00695c teal darken-3'%>
